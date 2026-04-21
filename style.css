@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+#titolo {
+    color: darkred;
+    margin-bottom: 20px;
+}
+
+#linkRoma {
+    display: block;
+    margin-top: 20px;
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#linkRoma:hover {
+    text-decoration: underline;
+}
