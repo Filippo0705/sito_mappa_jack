@@ -20,3 +20,17 @@ body {
 #linkRoma:hover {
     text-decoration: underline;
 }
+
+form {
+    margin-top: 20px;
+}
+
+input {
+    padding: 5px;
+    margin: 5px;
+}
+
+button {
+    padding: 8px;
+    margin-top: 10px;
+}
