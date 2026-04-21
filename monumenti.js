@@ -20,6 +20,7 @@ function aggiungiMonumenti(mappa) {
 function mostraStatisticheMonumenti() {
     alert("Numero di monumenti: " + monumenti.length);
 }
-function aggiungiMonumentoArray(monumento) {
-    monumenti.push(monumento);
+
+function ottieniListaMonumenti() {
+    return monumenti;
 }

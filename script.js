@@ -6,16 +6,34 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // AGGIUNTA
 aggiungiMonumenti(map);
+mostraStatisticheMonumenti();
 
-document.getElementById("formMonumento").addEventListener("submit", function(e) {
-    e.preventDefault();
+document.getElementById("btnTabella").addEventListener("click", function() {
+    const container = document.getElementById("tabellaContainer");
+    container.innerHTML = "";
 
-    const lat = parseFloat(document.getElementById("lat").value);
-    const lng = parseFloat(document.getElementById("lng").value);
+    const dati = ottieniListaMonumenti();
 
-    const nuovo = { lat, lng };
+    const table = document.createElement("table");
 
-    aggiungiMonumentoArray(nuovo);
+    dati.forEach((m, i) => {
+        const tr = document.createElement("tr");
 
-    L.marker([lat, lng]).addTo(map);
+        const td1 = document.createElement("td");
+        td1.textContent = i + 1;
+
+        const td2 = document.createElement("td");
+        td2.textContent = m.lat;
+
+        const td3 = document.createElement("td");
+        td3.textContent = m.lng;
+
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+
+        table.appendChild(tr);
+    });
+
+    container.appendChild(table);
 });
